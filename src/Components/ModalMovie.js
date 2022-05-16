@@ -11,7 +11,7 @@ export default function ModalMovie(props) {
           <Modal.Title>{props.chosenMovie.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={props.chosenMovie.release_date} alt="movie" />
+          <img src={`http://image.tmdb.org/t/p/w500/${props.chosenMovie.vote_average}`} width={464} alt='movie'/>
           {/* <p>{props.chosenMovie.posterPath}</p> */}
         </Modal.Body>
         <Modal.Footer>
