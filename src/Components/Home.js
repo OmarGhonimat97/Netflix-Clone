@@ -48,15 +48,3 @@ export default function Home() {
   );
 }
 
-// function updateRecipe(newRecipe, id) {
-//   console.log("newRecipe", newRecipe, id);
-//   let updatedRecipe = recipes.map(recipe => {
-//     if (recipe.id === id) {
-//       recipe.comment = newRecipe.userComment;
-//       return recipe;
-//     } else {
-//       return recipe;
-//     }
-//   })
-//   setRecipes(updatedRecipe);
-//  }
