@@ -16,11 +16,19 @@ export default function Movie(props) {
       const handleClose = () => setShow(false);
     return (
       <>
-        <Card style={{ width: "18rem" }}>
+        <Card
+          style={{
+            width: "18rem",
+            textAlign: "center",
+            marginTop: "3rem",
+            boxShadow:
+              "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+          }}
+        >
           <Card.Img variant="top" src={`http://image.tmdb.org/t/p/w500/${props.movie.vote_average}`} />
-          <Card.Body>
+          <Card.Body className="cardBody">
             <Card.Title>{props.movie.title}</Card.Title>
-            <Card.Text>{props.movie.posterPath}</Card.Text>
+            <Card.Text className="scrollBar">{props.movie.posterPath}</Card.Text>
             <Card.Text>Release Date:{props.movie.release_date}</Card.Text> 
            <Button variant="primary"
            onClick={() => {
@@ -34,6 +42,7 @@ export default function Movie(props) {
             show={show}
             handleClose={handleClose}
             chosenMovie={chosenMovie}
+            updateMovie={props.updateMovie}
         //   movie={props.movie}
           />
         }

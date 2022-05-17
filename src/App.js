@@ -1,15 +1,16 @@
 import { Routes, Route } from "react-router-dom";
-// import NavBar from "./components/NavBar";
+import NavBar from "./Components/Navbar";
 import Home from "./Components/Home";
-// import FavRecipe from "./components/FavRecipe";
+import FavList from "./Components/FavList ";
 
 function App() {
   return (
     <>
       <h1>Welcome to Movies Web app</h1>
-      {/* <NavBar /> */}
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/favMovies" element={<FavList />} />
       </Routes>
     </>
   );
@@ -17,8 +18,6 @@ function App() {
 
 export default App;
 
-
-{/* <Route path="favRecipes" element={<FavRecipe />} /> */}
 
 
 {/* <div className="App">
