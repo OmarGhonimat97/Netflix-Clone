@@ -18,6 +18,19 @@ export default function Home() {
     // console.log("states",recipes);
   }
 
+  function updateMovie(newMovie, id) {
+    console.log("newMovie", newMovie, id);
+    let updatedMovie = trending.map(movie => {
+      if (movie.id === id) {
+        movie.comment = newMovie.userComment;
+        return movie;
+      } else {
+        return movie;
+      }
+    })
+    setTrending(updatedMovie);
+   }
+
   useEffect(() => {
     getTrending();
   }, []);
@@ -27,8 +40,23 @@ export default function Home() {
     <>
       <h1>Home Page</h1>
       {
-        (trending.length>0)&& <MovieList trending={trending} />
+        (trending.length>0)&& <MovieList trending={trending}
+         updateMovie={updateMovie}
+          />
       }
     </>
   );
 }
+
+// function updateRecipe(newRecipe, id) {
+//   console.log("newRecipe", newRecipe, id);
+//   let updatedRecipe = recipes.map(recipe => {
+//     if (recipe.id === id) {
+//       recipe.comment = newRecipe.userComment;
+//       return recipe;
+//     } else {
+//       return recipe;
+//     }
+//   })
+//   setRecipes(updatedRecipe);
+//  }
